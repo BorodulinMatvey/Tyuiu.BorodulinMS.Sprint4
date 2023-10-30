@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.BorodulinMS.Sprint4.Task0.V1.Lib;
-namespace Tyuiu.BorodulinMS.Sprint4.Task0.V1
+using Tyuiu.BorodulinMS.Sprint4.Task1.V3.Lib;
+namespace Tyuiu.BorodulinMS.Sprint4.Task1.V3
 {
     class Program
     {
@@ -17,24 +17,37 @@ namespace Tyuiu.BorodulinMS.Sprint4.Task0.V1
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int[] numsArray = { 6, 4, 3, 2, 1, 0, 9, 8, 7, 5 };
+            int len;
+            Console.WriteLine("Введите количество элементов массива: ");
+            len = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Исходный массив: " );
-            for(int i = 0; i <=numsArray.Length -1; i++)
+            int[] numsArray = new int[len];
+               
+            for (int i = 0; i <= len - 1; i++)
             {
-                Console.WriteLine(numsArray[i]);
-            }    
-           
+                Console.WriteLine("Введите значение " + i + " элемент массива: ");
+                numsArray[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine("Массив: ");
+            
+            for(int i=0;i<=len -1;i++)
+            {
+                Console.WriteLine(numsArray[i] + "\t");
+
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
 
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Сумма четных элементов массива равна:" + ds.GetSumEvenArrEl(numsArray));
-            
-
-          
+            int res = ds.Calculate(numsArray);
+            Console.WriteLine(res);
             Console.ReadKey();
         }
     }
+    
 }

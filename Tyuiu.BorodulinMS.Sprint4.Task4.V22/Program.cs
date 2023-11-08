@@ -26,8 +26,9 @@ namespace Tyuiu.BorodulinMS.Sprint4.Task4.V22
             {
                 for(int j=0;j<columns;j++)
                 {
-                    Console.WriteLine($"Введите {i},{j} элемент массива:");
+                    Console.WriteLine($"Введите {i},{j} элементы массива значениями от 2 до 6:");
                     mtrx[i, j] = Convert.ToInt32(Console.ReadLine());
+                    
                 }
             }
             Console.WriteLine("\nМассив:");

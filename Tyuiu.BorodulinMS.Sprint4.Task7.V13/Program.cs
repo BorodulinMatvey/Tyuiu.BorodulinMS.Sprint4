@@ -3,42 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.BorodulinMS.Sprint4.Task6.V18.Lib;
-namespace Tyuiu.BorodulinMS.Sprint4.Task6.V18
+using Tyuiu.BorodulinMS.Sprint4.Task7.V13.Lib;
+namespace Tyuiu.BorodulinMS.Sprint4.Task7.V13
 {
     class Program
     {
         static void Main(string[] args)
         {
             DataService ds = new DataService();
-            
+            int n = 3;
+            int m = 3;
+            int[,] mtrx = new int[n, m];
+            string value = "159357246";
+
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-            var pats = new string[] { "Собака", "Кошка", "Кролик", "Хомяк", "Попугай", "Рыбка", "Черепаха" };
 
-            Console.WriteLine("Исходный массив:");
-            for(int i=0;i<=pats.Length -1;i++)
+            int index = 0;
+
+            Console.WriteLine("\nМассив:");
+            for(int i=0;i<n;i++)
             {
-                Console.WriteLine(pats[i]);
-
+                for(int j=0;j<m;j++)
+                {
+                    Console.WriteLine($"{value[index]} \t");
+                    index++;
+                }
+                Console.WriteLine();
             }
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
+            int res = ds.Calculate(n, m, value);
 
-            pats = ds.Calculate(pats);
-
-            for (int i = 0; i <= pats.Length - 1; i++)
-            {
-                Console.WriteLine( pats[i]);
-
-            }
-            Console.WriteLine();
-            
-
-           
+            Console.WriteLine("Сумма всех четных элементов массива равна: "+res);
             Console.ReadKey();
         }
     }
